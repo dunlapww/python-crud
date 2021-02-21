@@ -1,3 +1,5 @@
+
+
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -18,6 +20,7 @@ class Todo(db.Model):
 
 def index():
   if request.method == 'POST':
+    
     task_content = request.form['content']
     new_task = Todo(content=task_content)
     
